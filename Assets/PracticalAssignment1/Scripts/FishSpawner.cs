@@ -19,7 +19,7 @@ public class FishSpawner : MonoBehaviour
             position.z = 0;
             GameObject fish = GameObject.Instantiate(fishPrefab);
             fish.transform.position = position;
-            fish.transform.Rotate(0, 0, Random.value * 360);
+            //fish.transform.Rotate(0, 0, Random.value * 360);
         }
     }
 }
