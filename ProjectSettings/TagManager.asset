@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - SEED
+  - SCARED
+  - FREE_GUTS
+  - NO_ITEM
+  - MATCHES
+  - DEPOSITPOINT
+  - NERD
+  - RED_BOID
+  - PREDATOR
+  - MOUSE
+  - DROPPED
+  - REPULSIVE
+  - BATCAT
+  - CHEESE
+  - RED_TAG
+  - ATTACKER
+  - BUBBLE
+  - ITEM
+  - WOOD
+  - BLUE_BOID
+  - TRASH
+  - CHICK
+  - GHOST
+  - MONEY
+  - NEWSPAPER
+  - WANDERPOINT
+  - TRASH_CAN
+  - BEER
+  - HEN
+  - NO_SEED
+  - BOID
+  - TARGETLOC
+  - TRAPPED_MOUSE
+  - COHESIVE
+  - OTHER_SEED
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  m_RenderingLayers:
+  - Default
