@@ -39,6 +39,7 @@ TagManager:
   - TRAPPED_MOUSE
   - COHESIVE
   - OTHER_SEED
+  - FISH
   layers:
   - Default
   - TransparentFX
