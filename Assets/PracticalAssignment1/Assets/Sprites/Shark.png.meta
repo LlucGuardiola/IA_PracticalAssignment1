@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4c8b36a8d708d4b4dbd7d9403ccf7416
+guid: 6e58d3742c3b7ff46b5fa3afda13174c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5263544528709787047
-    second: tauro_0
+      213: 5746764926269108267
+    second: Shark_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tauro_0
+      name: Shark_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 39
-        width: 696
-        height: 261
+        x: 16
+        y: 18
+        width: 553
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ad92358cdddb0940800000000000000
-      internalID: 5263544528709787047
+      spriteID: b20b1f5b04c90cf40800000000000000
+      internalID: 5746764926269108267
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tauro_0: 5263544528709787047
+      Shark_0: 5746764926269108267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

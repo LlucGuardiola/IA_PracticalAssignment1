@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73e6b0acc429be4409779b4ba3385a25
+guid: b11aa06f268195e478be2c93302b5b29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4956389334022642783
-    second: pez_0
+      213: -1915776564401465818
+    second: Fish_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pez_0
+      name: Fish_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 671
-        height: 349
+        x: 140
+        y: 160
+        width: 683
+        height: 326
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5c54f6d6d1a8c440800000000000000
-      internalID: 4956389334022642783
+      spriteID: 62615d96d5bc965e0800000000000000
+      internalID: -1915776564401465818
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pez_0: 4956389334022642783
+      Fish_0: -1915776564401465818
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
