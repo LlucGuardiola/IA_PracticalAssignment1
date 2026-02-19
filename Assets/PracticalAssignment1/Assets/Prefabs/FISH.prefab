@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1368880381347978215}
   - component: {fileID: 1368880381347978219}
   m_Layer: 0
-  m_Name: Fish
-  m_TagString: RED_BOID
+  m_Name: FISH
+  m_TagString: FISH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fadfb23a909584e8ff82b91a0977c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAcceleration: 15
-  maxSpeed: 4
+  maxAcceleration: 7
+  maxSpeed: 2
   clipVelocity: 1
   maxAngularAcceleration: 180
   maxAngularSpeed: 90
@@ -136,9 +136,9 @@ MonoBehaviour:
   slowDownAngle: 10
   maxPredictionTime: 3
   showFutureTargetGizmos: 0
-  idTag: RED_BOID
-  repulsionThreshold: 15
-  cohesionThreshold: 30
+  idTag: FISH
+  repulsionThreshold: 1000000
+  cohesionThreshold: 267.2
   coneOfVisionAngle: 360
   applyVision: 0
   cohesionWeight: 0.3
