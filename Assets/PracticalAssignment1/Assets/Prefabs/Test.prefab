@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: -3894769920178590844}
   - component: {fileID: 1368880381347978215}
   - component: {fileID: 1368880381347978219}
+  - component: {fileID: -2888302081613463891}
+  - component: {fileID: 1363833568345458154}
   m_Layer: 0
   m_Name: Test
   m_TagString: RED_BOID
@@ -150,7 +152,7 @@ MonoBehaviour:
   wanderOffset: 20
   showWanderGizmos: 0
   wanderTargetOrientation: 0
-  seekWeight: 0.11
+  seekWeight: 0.08
   lookAheadLength: 20
   avoidDistance: 22
   secondaryWhiskerAngle: 30
@@ -178,3 +180,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   backToInitial: 1
+--- !u!114 &-2888302081613463891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368880381347978208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823459bfcabf59e4bbb7d30c1033e0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FSMs.FSMExecutor
+  fsm: {fileID: 11400000, guid: d9536ef1e44fb2e4badbf2bf683fa023, type: 2}
+  currentState: 
+  textMesh: {fileID: 0}
+--- !u!114 &1363833568345458154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368880381347978208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970279e77fdeda740a545a68885b6183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fish_BLACKBOARD
+  sharkNearRadious: 100

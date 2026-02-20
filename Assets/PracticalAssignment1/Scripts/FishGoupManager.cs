@@ -11,7 +11,8 @@ public class FishGroupManager : Steerings.GroupManager
     private int created = 0;
     private float elapsedTime = 0f;
     public Camera cam;
-    public GameObject fishPrefab; 
+    public GameObject FishPrefab;
+    public GameObject SharkPrefab;
 
     // the following attributes are specifically created to help listeners of UI
     // components get the initial values for the UI elements they're attached to
@@ -21,7 +22,7 @@ public class FishGroupManager : Steerings.GroupManager
 
     void Start()
     {
-        GameObject dummy = Instantiate(fishPrefab);
+        GameObject dummy = Instantiate(FishPrefab);
         Steerings.SteeringContext context = dummy.GetComponent<Steerings.SteeringContext>();
         maxSpeed = context.maxSpeed;
         maxAcceleration = context.maxAcceleration;
@@ -47,7 +48,7 @@ public class FishGroupManager : Steerings.GroupManager
     {
         if (Input.GetMouseButtonDown(1)) // click dret
         {
-            GameObject clone = Instantiate(fishPrefab);
+            GameObject clone = Instantiate(FishPrefab);
             var position = cam.ScreenToWorldPoint(Input.mousePosition);
             position.z = 0;
             clone.transform.Rotate(0, 0, Random.value * 360);
@@ -59,6 +60,11 @@ public class FishGroupManager : Steerings.GroupManager
                 clone.AddComponent<Steerings.FlockingAroundPlusAvoidance>();
                 clone.GetComponent<Steerings.FlockingAroundPlusAvoidance>().attractor = attractor;
                 clone.GetComponent<Steerings.FlockingAroundPlusAvoidance>().rotationalPolicy = Steerings.SteeringBehaviour.RotationalPolicy.LWYGI;
+
+                clone.AddComponent<Steerings.Flee>();
+                clone.GetComponent<Steerings.Flee>().target = SharkPrefab;
+                clone.GetComponent<Steerings.Flee>().rotationalPolicy = Steerings.SteeringBehaviour.RotationalPolicy.LWYGI;
+                clone.GetComponent<Steerings.Flee>().enabled = false;
             }
             else
             {

@@ -587,7 +587,8 @@ MonoBehaviour:
   around: 1
   attractor: {fileID: 286978535}
   cam: {fileID: 0}
-  fishPrefab: {fileID: 1368880381347978208, guid: 422b6f9d1c0ff9a43b901090f5d220d4, type: 3}
+  FishPrefab: {fileID: 1368880381347978208, guid: 422b6f9d1c0ff9a43b901090f5d220d4, type: 3}
+  SharkPrefab: {fileID: 2210774478296672656, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
   maxSpeed: 0
   maxAcceleration: 0
   cohesionThreshold: 0
@@ -1253,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210774478296672656, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: m_TagString
-      value: HEN
+      value: SHARK
       objectReference: {fileID: 0}
     - target: {fileID: 2509585230385732640, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: m_LocalScale.x

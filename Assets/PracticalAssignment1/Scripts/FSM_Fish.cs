@@ -14,6 +14,7 @@ public class FSM_Fish : FiniteStateMachine
     private Flee flee;
     private FlockingAround flockingAround;
     private GameObject shark;
+    private SteeringContext steeringContext; 
 
     public override void OnEnter()
     {
@@ -23,6 +24,7 @@ public class FSM_Fish : FiniteStateMachine
         blackboard = GetComponent<Fish_BLACKBOARD>();
         flee = GetComponent< Flee>();
         flockingAround = GetComponent<FlockingAroundPlusAvoidance>();   
+        steeringContext = GetComponent<SteeringContext>();  
         
         base.OnEnter(); // do not remove
     }
@@ -57,9 +59,22 @@ public class FSM_Fish : FiniteStateMachine
        );
 
         State EvadeShark = new State("EvadeShark",
-           () => { flee.enabled = true;  flee.target = shark; } ,// write on enter logic inside {}
+           () => 
+           {
+               steeringContext.maxAcceleration = steeringContext.maxAcceleration * 2;
+               steeringContext.maxAcceleration = steeringContext.maxSpeed * 2;
+               flee.enabled = true;
+               flee.target = shark;
+           
+           } ,// write on enter logic inside {}
            () => { Debug.Log("Evade"); }, // write in state logic inside {}
-           () => { flee.enabled = false;  }  // write on exit logic inisde {}  
+           () => 
+           { 
+               flee.enabled = false;
+
+               steeringContext.maxAcceleration = steeringContext.maxAcceleration / 2;
+               steeringContext.maxAcceleration = steeringContext.maxSpeed / 2;
+           }  // write on exit logic inisde {}  
        );
         /* STAGE 2: create the transitions with their logic(s)
          * ---------------------------------------------------
@@ -71,7 +86,7 @@ public class FSM_Fish : FiniteStateMachine
 
         */
         Transition SharkNear= new Transition("SharkNear",
-            () => { shark = SensingUtils.FindInstanceWithinRadius(gameObject,"HEN",blackboard.sharkNearRadious); return shark != null;  }, // write the condition checkeing code in {}
+            () => { shark = SensingUtils.FindInstanceWithinRadius(gameObject,"SHARK",blackboard.sharkNearRadious); return shark != null;  }, // write the condition checkeing code in {}
             () => { }  // write the on trigger code in {} if any. Remove line if no on trigger action needed
         );
         Transition SharkFarAway = new Transition("SharkFarAway",
