@@ -61,10 +61,10 @@ public class FishGroupManager : Steerings.GroupManager
                 clone.GetComponent<Steerings.FlockingAroundPlusAvoidance>().attractor = attractor;
                 clone.GetComponent<Steerings.FlockingAroundPlusAvoidance>().rotationalPolicy = Steerings.SteeringBehaviour.RotationalPolicy.LWYGI;
 
-                clone.AddComponent<Steerings.FleePlusOA>();
+                clone.AddComponent<Steerings.EvadePlusOA>();
                 //clone.GetComponent<Steerings.FleePlusOA>().target = SharkPrefab;
-                clone.GetComponent<Steerings.FleePlusOA>().rotationalPolicy = Steerings.SteeringBehaviour.RotationalPolicy.LWYGI;
-                clone.GetComponent<Steerings.FleePlusOA>().enabled = false;
+                clone.GetComponent<Steerings.EvadePlusOA>().rotationalPolicy = Steerings.SteeringBehaviour.RotationalPolicy.LWYGI;
+                clone.GetComponent<Steerings.EvadePlusOA>().enabled = false;
             }
             else
             {

@@ -11,8 +11,8 @@ public class FSM_Fish : FiniteStateMachine
      * For instance: steering behaviours, blackboard, ...*/
 
     private Fish_BLACKBOARD blackboard;
-    private FleePlusOA flee;
-    private FlockingAround flockingAround;
+    private EvadePlusOA evadePlusOA;
+    private FlockingAroundPlusAvoidance flockingAround;
     private GameObject shark;
     private SteeringContext steeringContext; 
 
@@ -22,7 +22,7 @@ public class FSM_Fish : FiniteStateMachine
          * It's equivalent to the on enter action of any state 
          * Usually this code includes .GetComponent<...> invocations */
         blackboard = GetComponent<Fish_BLACKBOARD>();
-        flee = GetComponent<FleePlusOA>();
+        evadePlusOA = GetComponent<EvadePlusOA>();
         flockingAround = GetComponent<FlockingAroundPlusAvoidance>();   
         steeringContext = GetComponent<SteeringContext>();  
         
@@ -61,19 +61,14 @@ public class FSM_Fish : FiniteStateMachine
         State EvadeShark = new State("EvadeShark",
            () => 
            {
-               steeringContext.maxAcceleration = steeringContext.maxAcceleration * 2;
-               steeringContext.maxAcceleration = steeringContext.maxSpeed * 2;
-               flee.enabled = true;
-               flee.target = shark;
+               evadePlusOA.enabled = true;
+               evadePlusOA.target = shark;
            
            } ,// write on enter logic inside {}
-           () => { Debug.Log("Evade"); }, // write in state logic inside {}
+           () => { Debug.Log("EvadePLusOA"); }, // write in state logic inside {}
            () => 
            { 
-               flee.enabled = false;
-
-               steeringContext.maxAcceleration = steeringContext.maxAcceleration / 2;
-               steeringContext.maxAcceleration = steeringContext.maxSpeed / 2;
+               evadePlusOA.enabled = false;
            }  // write on exit logic inisde {}  
        );
         /* STAGE 2: create the transitions with their logic(s)

@@ -8,7 +8,7 @@ public class FSM_MouseAware : FiniteStateMachine
     /* Declare here, as attributes, all the variables that need to be shared among
      * states and transitions and/or set in OnEnter or used in OnExit 
      * For instance: steering behaviours, blackboard, ...*/
-    private FleePlusOA flee;
+    private EvadePlusOA flee;
     private MOUSE_Blackboard blackboard;
     private SteeringContext steeringContext;
     private GameObject peril;
@@ -21,7 +21,7 @@ public class FSM_MouseAware : FiniteStateMachine
          * It's equivalent to the on enter action of any state 
          * Usually this code includes .GetComponent<...> invocations */
 
-        flee = GetComponent<FleePlusOA>();
+        flee = GetComponent<EvadePlusOA>();
         blackboard = GetComponent<MOUSE_Blackboard>();
         steeringContext = GetComponent<SteeringContext>();
 

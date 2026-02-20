@@ -10,9 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2509585230385732640}
   - component: {fileID: 1263645646265558861}
+  - component: {fileID: 1580482909716531870}
+  - component: {fileID: 6160521382527182567}
+  - component: {fileID: 5854521242289192590}
+  - component: {fileID: 4851204799734534393}
+  - component: {fileID: 2734265980022814435}
   m_Layer: 0
   m_Name: SHARK
-  m_TagString: Untagged
+  m_TagString: SHARK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.9, y: -3.6, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 0.60225}
+  m_LocalScale: {x: 25, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,3 +96,116 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1580482909716531870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210774478296672656}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c310f44b1bea2c4e942b7537734de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveToClick
+  rightClick: 0
+--- !u!114 &6160521382527182567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210774478296672656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15fadfb23a909584e8ff82b91a0977c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Steerings.SteeringContext
+  maxAcceleration: 40
+  maxSpeed: 10
+  clipVelocity: 1
+  maxAngularAcceleration: 360
+  maxAngularSpeed: 90
+  clipAngularSpeed: 1
+  timeToDesiredSpeed: 0.1
+  closeEnoughRadius: 1
+  slowdownRadius: 5
+  timeToDesiredAngularSpeed: 0.1
+  closeEnoughAngle: 2
+  slowDownAngle: 10
+  maxPredictionTime: 3
+  showFutureTargetGizmos: 0
+  idTag: 
+  repulsionThreshold: 15
+  cohesionThreshold: 30
+  coneOfVisionAngle: 270
+  applyVision: 0
+  cohesionWeight: 0.3
+  repulsionWeight: 0.5
+  alignmentWeight: 0.2
+  addWanderIfZero: 1
+  wanderRate: 30
+  wanderRadius: 10
+  wanderOffset: 20
+  showWanderGizmos: 0
+  wanderTargetOrientation: 0
+  seekWeight: 0.2
+  lookAheadLength: 10
+  avoidDistance: 12
+  secondaryWhiskerAngle: 30
+  secondaryWhiskerRatio: 0.7
+  perseveranceTime: 0
+  showAvoidanceGizmos: 0
+  perseveranceElapsed: 0
+  persevering: 0
+  avoidanceAcceleration: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  speed: 0
+  angularSpeed: 0
+  groupManager: {fileID: 0}
+--- !u!114 &5854521242289192590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210774478296672656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823459bfcabf59e4bbb7d30c1033e0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FSMs.FSMExecutor
+  fsm: {fileID: 11400000, guid: 430f795a55faacc4481ed2f21f78c116, type: 2}
+  currentState: 
+  textMesh: {fileID: 0}
+--- !u!114 &4851204799734534393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210774478296672656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6d556fafdb87c4798116fa8ad679c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shark_BLACKBOARD
+  kelpZone: {fileID: 0}
+  PeekZone: {fileID: 0}
+  KelpZoneReachedRadious: 2
+  hideTime: 3
+  peekTime: 2
+--- !u!114 &2734265980022814435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210774478296672656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1c6fa0d5ba45c4eb509c1ad6e53e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Steerings.Arrive
+  rotationalPolicy: 1
+  target: {fileID: 0}
