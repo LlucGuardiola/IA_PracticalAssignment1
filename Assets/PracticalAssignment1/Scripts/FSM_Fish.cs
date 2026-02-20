@@ -11,7 +11,7 @@ public class FSM_Fish : FiniteStateMachine
      * For instance: steering behaviours, blackboard, ...*/
 
     private Fish_BLACKBOARD blackboard;
-    private Flee flee;
+    private FleePlusOA flee;
     private FlockingAround flockingAround;
     private GameObject shark;
     private SteeringContext steeringContext; 
@@ -22,7 +22,7 @@ public class FSM_Fish : FiniteStateMachine
          * It's equivalent to the on enter action of any state 
          * Usually this code includes .GetComponent<...> invocations */
         blackboard = GetComponent<Fish_BLACKBOARD>();
-        flee = GetComponent< Flee>();
+        flee = GetComponent<FleePlusOA>();
         flockingAround = GetComponent<FlockingAroundPlusAvoidance>();   
         steeringContext = GetComponent<SteeringContext>();  
         
