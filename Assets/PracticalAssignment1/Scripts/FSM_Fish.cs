@@ -14,9 +14,6 @@ public class FSM_Fish : FiniteStateMachine
     private Flee flee;
     private FlockingAround flockingAround;
     private GameObject shark;
-    private WanderAround wanderAround;
-    
-
 
     public override void OnEnter()
     {
@@ -25,7 +22,7 @@ public class FSM_Fish : FiniteStateMachine
          * Usually this code includes .GetComponent<...> invocations */
         blackboard = GetComponent<Fish_BLACKBOARD>();
         flee = GetComponent< Flee>();
-        flockingAround = GetComponent<FlockingAround>();   
+        flockingAround = GetComponent<FlockingAroundPlusAvoidance>();   
         
         base.OnEnter(); // do not remove
     }

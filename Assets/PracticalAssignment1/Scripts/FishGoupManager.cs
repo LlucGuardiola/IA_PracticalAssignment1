@@ -3,16 +3,15 @@ using UnityEngine;
 
 public class FishGroupManager : Steerings.GroupManager
 {
-    //public int numInstances = 20;
-    //public float delay = 0.5f;
-    private Camera cam;
-    public GameObject fishPrefab;
+    public int numInstances = 20;
+    public float delay = 0.5f;
     public bool around = false;
     public GameObject attractor;
 
-
     private int created = 0;
-    //private float elapsedTime = 0f;
+    private float elapsedTime = 0f;
+    public Camera cam;
+    public GameObject fishPrefab; 
 
     // the following attributes are specifically created to help listeners of UI
     // components get the initial values for the UI elements they're attached to
@@ -22,7 +21,6 @@ public class FishGroupManager : Steerings.GroupManager
 
     void Start()
     {
-        cam = Camera.main;
         GameObject dummy = Instantiate(fishPrefab);
         Steerings.SteeringContext context = dummy.GetComponent<Steerings.SteeringContext>();
         maxSpeed = context.maxSpeed;
@@ -35,25 +33,18 @@ public class FishGroupManager : Steerings.GroupManager
         alignmentWeight = context.alignmentWeight;
         seekWeight = context.seekWeight;
         Destroy(dummy);
+        cam = Camera.main;  
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckSpawn();
+        Spawn();
     }
 
 
-    private void CheckSpawn()
+    private void Spawn()
     {
-        //if (created == numInstances) return;
-
-        //if (elapsedTime < delay)
-        //{
-        //    elapsedTime += Time.deltaTime;
-        //    return;
-        //}
-
         if (Input.GetMouseButtonDown(1)) // click dret
         {
             GameObject clone = Instantiate(fishPrefab);
@@ -62,11 +53,12 @@ public class FishGroupManager : Steerings.GroupManager
             clone.transform.Rotate(0, 0, Random.value * 360);
             clone.transform.position = position;
             Debug.Log(around);
+
             if (around)
             {
-                clone.AddComponent<Steerings.FlockingAround>();
-                clone.GetComponent<Steerings.FlockingAround>().attractor = attractor;
-                clone.GetComponent<Steerings.FlockingAround>().rotationalPolicy = Steerings.SteeringBehaviour.RotationalPolicy.LWYGI;
+                clone.AddComponent<Steerings.FlockingAroundPlusAvoidance>();
+                clone.GetComponent<Steerings.FlockingAroundPlusAvoidance>().attractor = attractor;
+                clone.GetComponent<Steerings.FlockingAroundPlusAvoidance>().rotationalPolicy = Steerings.SteeringBehaviour.RotationalPolicy.LWYGI;
             }
             else
             {
@@ -76,7 +68,7 @@ public class FishGroupManager : Steerings.GroupManager
 
 
 
-            if (created == 1)
+            if (created == 0)
             {
                 // first one and only it
                 ShowRadiiPro shr = clone.GetComponent<ShowRadiiPro>();
@@ -93,12 +85,11 @@ public class FishGroupManager : Steerings.GroupManager
                         clone.GetComponent<TrailRenderer>().enabled = true;
                     }
                 }
-                created++;
             }
 
             AddBoid(clone);
-            //elapsedTime = 0f;
+            created++;
+            elapsedTime = 0f;
         }
-
     }
 }

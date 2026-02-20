@@ -5,7 +5,7 @@ namespace Steerings
 {
     public class FlockingAroundPlusAvoidance : FlockingAround
     {
-        // public GameObject attractor;
+        //public GameObject attractor;
 
         public override Vector3 GetLinearAcceleration()
         {
