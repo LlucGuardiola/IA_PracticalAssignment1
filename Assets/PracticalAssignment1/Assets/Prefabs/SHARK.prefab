@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5854521242289192590}
   - component: {fileID: 4851204799734534393}
   - component: {fileID: 2734265980022814435}
+  - component: {fileID: -129896985407948721}
   m_Layer: 0
   m_Name: SHARK
   m_TagString: SHARK
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823459bfcabf59e4bbb7d30c1033e0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FSMs.FSMExecutor
-  fsm: {fileID: 11400000, guid: 430f795a55faacc4481ed2f21f78c116, type: 2}
+  fsm: {fileID: 11400000, guid: 47d3d29a08c126444bdacff4c6af21fb, type: 2}
   currentState: 
   textMesh: {fileID: 0}
 --- !u!114 &4851204799734534393
@@ -195,7 +196,25 @@ MonoBehaviour:
   KelpZoneReachedRadious: 2
   hideTime: 3
   peekTime: 2
+  aproachRadius: 2
+  chaseRadius: 2
+  biteRadius: 2
+  biteDuration: 2
 --- !u!114 &2734265980022814435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210774478296672656}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1c6fa0d5ba45c4eb509c1ad6e53e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Steerings.Arrive
+  rotationalPolicy: 1
+  target: {fileID: 0}
+--- !u!114 &-129896985407948721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,8 +223,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2210774478296672656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1c6fa0d5ba45c4eb509c1ad6e53e63, type: 3}
+  m_Script: {fileID: 11500000, guid: 35576899334b6924d9e0f4edd36a1757, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Steerings.Arrive
+  m_EditorClassIdentifier: Assembly-CSharp::Steerings.Pursue
   rotationalPolicy: 1
   target: {fileID: 0}

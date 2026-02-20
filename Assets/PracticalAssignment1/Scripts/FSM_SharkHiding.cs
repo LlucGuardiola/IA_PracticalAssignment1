@@ -10,7 +10,6 @@ public class FSM_SharkHiding : FiniteStateMachine
      * For instance: steering behaviours, blackboard, ...*/
 
     private Arrive arrive;
-    private SteeringContext steeringContext;
     private Shark_BLACKBOARD blackboard;
     private float elapsedTime;
 
@@ -20,7 +19,6 @@ public class FSM_SharkHiding : FiniteStateMachine
          * It's equivalent to the on enter action of any state 
          * Usually this code includes .GetComponent<...> invocations */
         arrive = GetComponent<Arrive>();
-        steeringContext = GetComponent<SteeringContext>();
         blackboard = GetComponent<Shark_BLACKBOARD>();
         base.OnEnter(); // do not remove
     }

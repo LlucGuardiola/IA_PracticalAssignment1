@@ -1156,7 +1156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1898100854}
   m_Layer: 0
-  m_Name: janREVILLAmarica
+  m_Name: jan batlle NERD i personaje
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1354,6 +1354,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2734265980022814435, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: PeekZone
       value: 
@@ -1365,6 +1369,14 @@ PrefabInstance:
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: KelpZoneReachedRadious
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5854521242289192590, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: fsm
+      value: 
+      objectReference: {fileID: 11400000, guid: 47d3d29a08c126444bdacff4c6af21fb, type: 2}
+    - target: {fileID: 5854521242289192590, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6160521382527182567, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: maxSpeed
