@@ -40,6 +40,7 @@ TagManager:
   - COHESIVE
   - OTHER_SEED
   - FISH
+  - SHARK
   layers:
   - Default
   - TransparentFX

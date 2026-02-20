@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: -3894769920178590844}
   - component: {fileID: 1368880381347978215}
   - component: {fileID: 1368880381347978219}
+  - component: {fileID: 2706356660727299304}
+  - component: {fileID: 252556351578203363}
+  - component: {fileID: 8883282981833519034}
   m_Layer: 0
   m_Name: FISH
   m_TagString: FISH
@@ -30,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fadfb23a909584e8ff82b91a0977c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAcceleration: 7
-  maxSpeed: 2
+  maxAcceleration: 80
+  maxSpeed: 40
   clipVelocity: 1
   maxAngularAcceleration: 180
   maxAngularSpeed: 90
@@ -178,3 +181,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   backToInitial: 1
+--- !u!114 &2706356660727299304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368880381347978208}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51021b399ad270942b4928c10c0a1e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Steerings.Flee
+  rotationalPolicy: 1
+  target: {fileID: 0}
+--- !u!114 &252556351578203363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368880381347978208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823459bfcabf59e4bbb7d30c1033e0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FSMs.FSMExecutor
+  fsm: {fileID: 11400000, guid: d9536ef1e44fb2e4badbf2bf683fa023, type: 2}
+  currentState: 
+  textMesh: {fileID: 0}
+--- !u!114 &8883282981833519034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368880381347978208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970279e77fdeda740a545a68885b6183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fish_BLACKBOARD
+  sharkNearRadious: 100
