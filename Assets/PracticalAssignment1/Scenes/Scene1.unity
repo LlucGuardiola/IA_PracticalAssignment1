@@ -1310,6 +1310,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -129896985407948721, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2210774478296672656, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: m_Name
       value: SHARK
@@ -1366,6 +1370,18 @@ PrefabInstance:
       propertyPath: kelpZone
       value: 
       objectReference: {fileID: 1898100853}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: biteRadius
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: chaseRadius
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: aproachRadius
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: KelpZoneReachedRadious
       value: 5

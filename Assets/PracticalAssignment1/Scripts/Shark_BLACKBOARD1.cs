@@ -13,11 +13,18 @@ public class Shark_BLACKBOARD : MonoBehaviour
     public float hideTime = 3.0f;
     public float peekTime = 2.0f;
 
-    public float aproachRadius = 2.0f;
+    public float aproachRadius = 200f;
     public float chaseRadius = 20.0f;
     public float biteRadius = 2.0f;
     public float biteDuration = 2.0f;
     public float detectRadius = 2.0f;
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 140);
+    }
 
 
     //[Header("Seed colecting")]
