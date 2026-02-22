@@ -15,8 +15,8 @@ public class FSM_Fish : FiniteStateMachine
     {
         blackboard = GetComponent<Fish_BLACKBOARD>();
         evadePlusOA = GetComponent<EvadePlusOA>();
-        flockingAround = GetComponent<FlockingAroundPlusAvoidance>();     
-        
+        flockingAround = GetComponent<FlockingAroundPlusAvoidance>();
+
         base.OnEnter();
     }
 
@@ -29,31 +29,31 @@ public class FSM_Fish : FiniteStateMachine
     public override void OnConstruction()
     {
         State FlockingAround = new State("FlockingAround",
-           () => { flockingAround.enabled = true; }, 
+           () => { flockingAround.enabled = true; },
            () => { Debug.Log("Flocking"); },
-           () => { flockingAround.enabled = false; } 
+           () => { flockingAround.enabled = false; }
         );
 
         State EvadeShark = new State("EvadeShark",
-           () => 
+           () =>
            {
                evadePlusOA.enabled = true;
                evadePlusOA.target = shark;
-           
-           } ,
-           () => { Debug.Log("EvadePLusOA"); }, 
-           () => 
-           { 
+
+           },
+           () => { Debug.Log("EvadePLusOA"); },
+           () =>
+           {
                evadePlusOA.enabled = false;
-           }  
+           }
         );
 
-        Transition SharkNear= new Transition("SharkNear",
-            () => { shark = SensingUtils.FindInstanceWithinRadius(gameObject,"SHARK",blackboard.sharkNearRadious); return shark != null;  },
+        Transition SharkNear = new Transition("SharkNear",
+            () => { shark = SensingUtils.FindInstanceWithinRadius(gameObject, "SHARK", blackboard.sharkNearRadious); return shark != null; },
             () => { }
         );
         Transition SharkFarAway = new Transition("SharkFarAway",
-           () => { return SensingUtils.DistanceToTarget(gameObject, shark) >=blackboard.sharkNearRadious;  }, 
+           () => { return SensingUtils.DistanceToTarget(gameObject, shark) >= blackboard.sharkNearRadious; },
            () => { }
         );
 

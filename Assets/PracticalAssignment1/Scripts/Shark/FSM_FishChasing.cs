@@ -10,7 +10,6 @@ public class FSM_FishChasing : FiniteStateMachine
     private Shark_BLACKBOARD blackboard;
     private SteeringContext steeringContext;
 
-    private float initSpeed;
     private float elapsedTime;
 
     public override void OnEnter()
@@ -18,7 +17,7 @@ public class FSM_FishChasing : FiniteStateMachine
         steeringContext = GetComponent<SteeringContext>();
         pursue = GetComponent<Pursue>();
         blackboard = GetComponent<Shark_BLACKBOARD>();
-        initSpeed = steeringContext.maxSpeed;
+
 
         base.OnEnter(); 
     }
@@ -33,14 +32,14 @@ public class FSM_FishChasing : FiniteStateMachine
     {
         State APROACH = new State("APROACH",
             () => {
-                steeringContext.maxSpeed = initSpeed / 2;
+                steeringContext.maxSpeed = blackboard.initSpeed / 2;
                 pursue.enabled = false;
                 pursue.target = null;
             },
             () => {
 
                 GameObject fish = SensingUtils.FindInstanceWithinRadius(
-                    gameObject, "FISH", blackboard.aproachRadius
+                    gameObject, "RED_BOID", blackboard.aproachRadius
                 );
 
                 if (fish != null)
@@ -53,7 +52,7 @@ public class FSM_FishChasing : FiniteStateMachine
         );
 
         State Chase = new State("Chase",
-            () => { steeringContext.maxSpeed = initSpeed *2; },
+            () => { steeringContext.maxSpeed = blackboard.initSpeed * 2; },
             () => { },
             () => { }
         );

@@ -6661,6 +6661,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 795799890}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: sleepTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: vomitList
       value: 
       objectReference: {fileID: 178603933}
@@ -6807,6 +6811,14 @@ PrefabInstance:
     - target: {fileID: 5854521242289192590, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: currentState
       value: SharkHidding
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050128223694469423, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050128223694469423, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6160521382527182567, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: maxSpeed

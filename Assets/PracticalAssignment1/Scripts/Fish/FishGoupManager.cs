@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class FishGroupManager : Steerings.GroupManager
@@ -31,7 +30,7 @@ public class FishGroupManager : Steerings.GroupManager
         alignmentWeight = context.alignmentWeight;
         seekWeight = context.seekWeight;
         Destroy(dummy);
-        cam = Camera.main;  
+        cam = Camera.main;
     }
 
     // Update is called once per frame

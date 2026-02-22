@@ -1,5 +1,6 @@
 
 using NUnit.Framework;
+using Steerings;
 using UnityEngine;
 
 public class Shark_BLACKBOARD : MonoBehaviour
@@ -18,6 +19,7 @@ public class Shark_BLACKBOARD : MonoBehaviour
     public float biteRadius = 2.0f;
     public float biteDuration = 0.1f;
     public float detectRadius = 2.0f;
+    public float initSpeed;
 
     [Header("Resting FSM")]
     public float vomitTime = 3f;
@@ -61,5 +63,7 @@ public class Shark_BLACKBOARD : MonoBehaviour
         sleepIcon.SetActive(false);
         poo.SetActive(false);
         fishesOnScene = 0;
+
+        initSpeed = GetComponent<SteeringContext>().maxSpeed;
     }
 }
