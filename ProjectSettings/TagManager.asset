@@ -41,6 +41,7 @@ TagManager:
   - OTHER_SEED
   - FISH
   - SHARK
+  - VOMIT
   layers:
   - Default
   - TransparentFX
