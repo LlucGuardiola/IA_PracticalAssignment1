@@ -101,11 +101,11 @@ public class FSM_Resting : FiniteStateMachine
             () => { return SensingUtils.DistanceToTarget(gameObject, blackboard.vomitZone) < blackboard.vomitZoneReachedRadious; },
             () => { }  
         );
-        Transition goingToPooZone = new Transition("goingToPooZone",
+        Transition goingToPoo = new Transition("goingToPooZone",
             () => { return SensingUtils.DistanceToTarget(gameObject, blackboard.pooZone) < blackboard.pooZoneReachedRadious; },
             () => { }
         );
-        Transition goingToPoo = new Transition("goingToPoo",
+        Transition goingToPooZone = new Transition("goingToPoo",
             () => { return vomitIndex == blackboard.elementsToVomit; }
         );
         Transition goingToBreathe = new Transition("Breathe",
@@ -120,8 +120,8 @@ public class FSM_Resting : FiniteStateMachine
 
         AddTransition(Sleep, goingToVomit, GoToVomitZone);
         AddTransition(GoToVomitZone, goingToZone, Vomit);
-        AddTransition (Vomit, goingToPoo, PooZone);
-        AddTransition(PooZone, goingToPooZone, Poo);
+        AddTransition (Vomit, goingToPooZone, PooZone);
+        AddTransition(PooZone, goingToPoo, Poo);
         AddTransition (Poo, goingToBreathe, Breathe);
         AddTransition (Breathe, goingToSleep, Sleep);
 
