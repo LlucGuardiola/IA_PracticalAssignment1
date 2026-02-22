@@ -3,7 +3,7 @@ using UnityEngine;
 using Steerings;
 
 [CreateAssetMenu(fileName = "FSM_SharkHiding", menuName = "Finite State Machines/FSM_", order = 1)]
-public class FSM_SharkHiding : FiniteStateMachine
+public class FSM_SharkHidding : FiniteStateMachine
 {
     /* Declare here, as attributes, all the variables that need to be shared among
      * states and transitions and/or set in OnEnter or used in OnExit 

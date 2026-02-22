@@ -49,6 +49,7 @@ public class FishGroupManager : Steerings.GroupManager
         if (Input.GetMouseButtonDown(1)) // click dret
         {
             GameObject clone = Instantiate(FishPrefab);
+            SharkPrefab.GetComponent<Shark_BLACKBOARD>().fishesOnScene++;
             var position = cam.ScreenToWorldPoint(Input.mousePosition);
             position.z = 0;
             clone.transform.Rotate(0, 0, Random.value * 360);

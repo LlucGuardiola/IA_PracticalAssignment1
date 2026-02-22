@@ -42,17 +42,18 @@ public class FSM_FishChasing : FiniteStateMachine
 
          */
 
-        State Approach = new State("APROACH",
+        State APROACH = new State("APROACH",
             () => {
                 steeringContext.maxSpeed = initSpeed / 2;
-                pursue.enabled = true;
+                pursue.enabled = false;
                 pursue.target = null;
             },
             () => {
+
                 GameObject fish = SensingUtils.FindInstanceWithinRadius(
                     gameObject, "RED_BOID", blackboard.aproachRadius
                 );
-    
+
                 if (fish != null)
                 {
                     pursue.target = fish;
@@ -64,15 +65,20 @@ public class FSM_FishChasing : FiniteStateMachine
 
 
         State Chase = new State("Chase",
-            () => { steeringContext.maxSpeed = initSpeed; },
+            () => { steeringContext.maxSpeed = initSpeed *2; },
             () => { },
             () => { }
         );
 
         State Bite = new State("Bite",
             () => { elapsedTime = 0; pursue.target.GetComponent<SteeringContext>().maxSpeed = 0; },
-            () => { elapsedTime = + Time.deltaTime; },
-            () => { Destroy(pursue.target.gameObject); }
+            () => { elapsedTime += Time.deltaTime;},
+            () => {
+                blackboard.totalFishesEaten++;
+                blackboard.fishesOnScene--;
+                Destroy(pursue.target.gameObject);
+                pursue.enabled = false;    
+            }
         );
 
         Transition goingToChase = new Transition("Going To Chase",
@@ -93,18 +99,18 @@ public class FSM_FishChasing : FiniteStateMachine
 
         Transition bited = new Transition("Bited",
             () => { return elapsedTime > blackboard.biteDuration; },
-            () => { elapsedTime = 0; }
+            () => { }
         );
 
 
-        AddStates(Approach, Chase, Bite);
+        AddStates(APROACH, Chase, Bite);
 
-        AddTransition(Approach, goingToChase, Chase);
-        AddTransition(Chase, notChased, Approach);
+        AddTransition(APROACH, goingToChase, Chase);
+        AddTransition(Chase, notChased, APROACH);
         AddTransition (Chase, chased, Bite);
-        AddTransition(Bite, bited, Approach);
+        AddTransition(Bite, bited, APROACH);
 
-        initialState = Approach;
+        initialState = APROACH;
 
     }
 }

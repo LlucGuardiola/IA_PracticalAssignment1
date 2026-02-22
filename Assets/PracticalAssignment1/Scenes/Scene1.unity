@@ -1667,6 +1667,97 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &524309328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524309330}
+  - component: {fileID: 524309329}
+  m_Layer: 0
+  m_Name: 91773-636709189_tiny_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &524309329
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524309328}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -25
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -3884433146378882600, guid: d35225a16c2146749bd5abe2e44288a9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.8, y: 7.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!4 &524309330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524309328}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 55.041027, y: 55.041027, z: 55.041027}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &528920699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,7 +1783,7 @@ Transform:
   m_GameObject: {fileID: 528920699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 218.6, y: -41.6, z: 0}
+  m_LocalPosition: {x: 265, y: -2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1762,7 +1853,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1516498331858923892, guid: ee94d11cacd9cc24495ff894a01755e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2389,7 +2480,7 @@ MonoBehaviour:
   attractor: {fileID: 286978535}
   cam: {fileID: 0}
   FishPrefab: {fileID: 1368880381347978208, guid: 422b6f9d1c0ff9a43b901090f5d220d4, type: 3}
-  SharkPrefab: {fileID: 2210774478296672656, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+  SharkPrefab: {fileID: 761045061}
   maxSpeed: 0
   maxAcceleration: 0
   cohesionThreshold: 0
@@ -2901,6 +2992,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &761045061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2210774478296672656, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+  m_PrefabInstance: {fileID: 2301216314282149046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &783958169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,7 +3172,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 8
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7533543496227113545, guid: 1873da8288109774bba0cb13859a7970, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3955,7 +4051,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 8
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7533543496227113545, guid: 1873da8288109774bba0cb13859a7970, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5407,7 +5503,7 @@ Transform:
   m_GameObject: {fileID: 1813602442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 161, y: -72, z: 0}
+  m_LocalPosition: {x: -0, y: -85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5529,7 +5625,7 @@ Transform:
   m_GameObject: {fileID: 1898100853}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 257, y: -163, z: 0}
+  m_LocalPosition: {x: 4, y: -161, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5841,7 +5937,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 8
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7533543496227113545, guid: 1873da8288109774bba0cb13859a7970, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5969,7 +6065,7 @@ Transform:
   m_GameObject: {fileID: 2009916251}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -253, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6480,6 +6576,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1263645646265558861, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2210774478296672656, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: m_Name
       value: SHARK
@@ -6574,7 +6674,7 @@ PrefabInstance:
       objectReference: {fileID: 528920699}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: biteRadius
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: breatheTime
@@ -6582,11 +6682,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: chaseRadius
-      value: 100
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: biteDuration
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: aproachRadius
-      value: 140
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: fishesOnScene
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: fishesToChase
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: fishbonePrefab
@@ -6594,7 +6706,11 @@ PrefabInstance:
       objectReference: {fileID: 117866, guid: 27d076acaf889c04a9ece6dbe0b2a936, type: 3}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: elementsToVomit
-      value: 10
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: totalFishToBeFed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: vomit.Array.size
@@ -6683,10 +6799,14 @@ PrefabInstance:
     - target: {fileID: 5854521242289192590, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: fsm
       value: 
-      objectReference: {fileID: 11400000, guid: 47d3d29a08c126444bdacff4c6af21fb, type: 2}
+      objectReference: {fileID: 11400000, guid: dab582ff29cacca4cb57e4313ef1986f, type: 2}
     - target: {fileID: 5854521242289192590, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5854521242289192590, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: currentState
+      value: SharkHidding
       objectReference: {fileID: 0}
     - target: {fileID: 6160521382527182567, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: maxSpeed
@@ -6796,3 +6916,4 @@ SceneRoots:
   - {fileID: 1381089293}
   - {fileID: 340718488}
   - {fileID: 713979178}
+  - {fileID: 524309330}

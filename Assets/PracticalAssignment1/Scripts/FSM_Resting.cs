@@ -64,7 +64,7 @@ public class FSM_Resting : FiniteStateMachine
         State Vomit = new State("Vomit",
             () => { 
                 vomitTimeInterval = blackboard.vomitTime / blackboard.elementsToVomit;
-
+                vomitIndex = 0; 
             }, // write on enter logic inside {}
             () => { 
                 vomitTimer += Time.deltaTime;
@@ -77,6 +77,7 @@ public class FSM_Resting : FiniteStateMachine
                     fishbone.transform.position = blackboard.mouth.gameObject.transform.position;
                     fishbone.transform.localRotation = Quaternion.Euler(0, 0,
                                           gameObject.transform.rotation.z);
+                    blackboard.totalFishesEaten--;
                     vomitIndex++;
                 }
             }, 
@@ -141,6 +142,6 @@ public class FSM_Resting : FiniteStateMachine
         AddTransition (Poo, goingToBreathe, Breathe);
         AddTransition (Breathe, goingToSleep, Sleep);
 
-        initialState = Sleep;
+        initialState = GoToVomitZone;
     }
 }

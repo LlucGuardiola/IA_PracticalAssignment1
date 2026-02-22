@@ -38,16 +38,36 @@ public class Shark_BLACKBOARD : MonoBehaviour
     public float vomitZoneReachedRadious = 2.0f;
     public float pooZoneReachedRadious = 2.0f;
 
+    public int totalFishesEaten = 0;   
+
     
+
+
+
+
+    [Header("SharkBehaviour")]
+    public int fishesOnScene;
+    public int fishesToChase = 30;
+    public GameObject currentFish;
+
+    public int totalFishToBeFed = 20;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 140);
+        Gizmos.DrawWireSphere(transform.position, aproachRadius);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, chaseRadius);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, biteRadius);
     }
     private void Awake()
     {
         sleepIcon.SetActive(false);
         poo.SetActive(false);
+        fishesOnScene = 0;
     }
     void Start()
     {
