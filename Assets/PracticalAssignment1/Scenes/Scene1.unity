@@ -4922,6 +4922,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!4 &1551487753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2509585230385732640, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+  m_PrefabInstance: {fileID: 2301216314282149046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1555888472
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,6 +6251,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &2116374692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2116374693}
+  m_Layer: 0
+  m_Name: Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2116374693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116374692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.39, y: -0.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1551487753}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2145537931
 GameObject:
   m_ObjectHideFlags: 0
@@ -6437,6 +6473,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -129896985407948721, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 2116374692}
+    - target: {fileID: -129896985407948721, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -6497,6 +6537,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 555832197}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: mouth
+      value: 
+      objectReference: {fileID: 2116374692}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: pooZone
       value: 
       objectReference: {fileID: 340718486}
@@ -6543,6 +6587,14 @@ PrefabInstance:
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: aproachRadius
       value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: fishbonePrefab
+      value: 
+      objectReference: {fileID: 117866, guid: 27d076acaf889c04a9ece6dbe0b2a936, type: 3}
+    - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      propertyPath: elementsToVomit
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4851204799734534393, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: vomit.Array.size
@@ -6631,7 +6683,7 @@ PrefabInstance:
     - target: {fileID: 5854521242289192590, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: fsm
       value: 
-      objectReference: {fileID: 11400000, guid: 26187501873de7d408e84f6812b5a6b4, type: 2}
+      objectReference: {fileID: 11400000, guid: 47d3d29a08c126444bdacff4c6af21fb, type: 2}
     - target: {fileID: 5854521242289192590, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -6646,7 +6698,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2509585230385732640, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2116374693}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31a9f5b49a82f4a4c8540ea7ae828a8f, type: 3}
 --- !u!1001 &7987881779324611546

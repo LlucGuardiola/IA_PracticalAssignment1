@@ -2,6 +2,7 @@ using FSMs;
 using UnityEngine;
 using Steerings;
 
+
 [CreateAssetMenu(fileName = "FSM_Resting", menuName = "Finite State Machines/FSM_Resting", order = 1)]
 public class FSM_Resting : FiniteStateMachine
 {
@@ -17,9 +18,11 @@ public class FSM_Resting : FiniteStateMachine
     private float elapsedTime;
 
     private int vomitIndex;
-    private float vomitTime;
+    private float vomitTimeInterval;
+    private float vomitTimer;
     private Vector3 startScale;
     private Vector3 targetScale;
+    
 
 
     public override void OnEnter()
@@ -45,16 +48,7 @@ public class FSM_Resting : FiniteStateMachine
 
     public override void OnConstruction()
     {
-        /* STAGE 1: create the states with their logic(s)
-         *-----------------------------------------------
-         
-        State varName = new State("StateName",
-            () => { }, // write on enter logic inside {}
-            () => { }, // write in state logic inside {}
-            () => { }  // write on exit logic inisde {}  
-        );
 
-         */
         State Sleep = new State("Sleep",
          () => { blackboard.sleepIcon.SetActive(true); elapsedTime = 0; }, // write on enter logic inside {}
          () => { elapsedTime += Time.deltaTime; }, // write in state logic inside {}
@@ -67,36 +61,31 @@ public class FSM_Resting : FiniteStateMachine
           () => { arrive.enabled = false; }  // write on exit logic inisde {}  
         );
 
-
         State Vomit = new State("Vomit",
             () => { 
-                elapsedTime = 0;
-                vomitTime = 0;  
-                vomitIndex = 0;
+                vomitTimeInterval = blackboard.vomitTime / blackboard.elementsToVomit;
+
             }, // write on enter logic inside {}
             () => { 
-                elapsedTime += Time.deltaTime;
-                vomitTime += Time.deltaTime;
+                vomitTimer += Time.deltaTime;
 
-                if((vomitIndex < blackboard.vomitElements.Length) && (vomitTime >= blackboard.vomitTimeInterval))
+                if (vomitTimer >= vomitTimeInterval)
                 {
-                    blackboard.vomitElements[vomitIndex].SetActive(true);
+                    vomitTimer = 0f;
+
+                    GameObject fishbone = Instantiate(blackboard.fishbonePrefab);
+                    fishbone.transform.position = blackboard.mouth.gameObject.transform.position;
+                    fishbone.transform.localRotation = Quaternion.Euler(0, 0,
+                                          gameObject.transform.rotation.z);
                     vomitIndex++;
-                    vomitTime = 0;
                 }
-            }, // write in state logic inside {}
-            () => {
-                foreach (GameObject v in blackboard.vomitElements)
-                {
-                    v.SetActive(false);
-                }
-            }  // write on exit logic inisde {}  
+            }, 
+            () => { }  
         );
         State PooZone = new State("PooZone",
             () => { arrive.enabled = true; arrive.target = blackboard.pooZone; },
             () => { },
             () => { arrive.enabled = false; }
-
         );
         State Poo = new State("Poo",
            () => { blackboard.poo.SetActive(true); ; elapsedTime = 0; }, // write on enter logic inside {}
@@ -110,7 +99,6 @@ public class FSM_Resting : FiniteStateMachine
                targetScale = startScale * 2.0f;
                elapsedTime = 0; 
           
-          
           }, // write on enter logic inside {}
           () => { 
               elapsedTime += Time.deltaTime;
@@ -119,15 +107,8 @@ public class FSM_Resting : FiniteStateMachine
           }, // write in state logic inside {}
           () => { gameObject.transform.localScale = startScale; }  // write on exit logic inisde {}  
         );
-        /* STAGE 2: create the transitions with their logic(s)
-         * ---------------------------------------------------
 
-        Transition varName = new Transition("TransitionName",
-            () => { }, // write the condition checkeing code in {}
-            () => { }  // write the on trigger code in {} if any. Remove line if no on trigger action needed
-        );
 
-        */
         Transition goingToVomit = new Transition("goingToVomit",
             () => { return elapsedTime >= blackboard.sleepTime; }, // write the condition checkeing code in {}
             () => { }  // write the on trigger code in {} if any. Remove line if no on trigger action needed
@@ -141,7 +122,7 @@ public class FSM_Resting : FiniteStateMachine
             () => { }  // write the on trigger code in {} if any. Remove line if no on trigger action needed
         );
         Transition goingToPoo = new Transition("goingToPoo",
-            () => { return (elapsedTime >= blackboard.vomitTime) && (vomitIndex >= blackboard.vomitElements.Length); }
+            () => { return vomitIndex == blackboard.elementsToVomit; }
         );
         Transition goingToBreathe = new Transition("Breathe",
             () => { return elapsedTime >= blackboard.pooTime; }
@@ -151,14 +132,6 @@ public class FSM_Resting : FiniteStateMachine
             () => { return elapsedTime >= blackboard.breatheTime; }
         );
 
-        /* STAGE 3: add states and transitions to the FSM 
-         * ----------------------------------------------
-            
-        AddStates(...);
-
-        AddTransition(sourceState, transition, destinationState);
-
-         */
         AddStates(Sleep, Vomit, Poo, Breathe, GoToVomitZone, PooZone);
 
         AddTransition(Sleep, goingToVomit, GoToVomitZone);
@@ -168,11 +141,6 @@ public class FSM_Resting : FiniteStateMachine
         AddTransition (Poo, goingToBreathe, Breathe);
         AddTransition (Breathe, goingToSleep, Sleep);
 
-        /* STAGE 4: set the initial state
-         
-        initialState = ... 
-
-         */
         initialState = Sleep;
     }
 }

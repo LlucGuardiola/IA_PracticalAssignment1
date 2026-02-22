@@ -18,7 +18,6 @@ public class FSM_FishChasing : FiniteStateMachine
         steeringContext = GetComponent<SteeringContext>();
         pursue = GetComponent<Pursue>();
         blackboard = GetComponent<Shark_BLACKBOARD>();
-
         initSpeed = steeringContext.maxSpeed;
 
         base.OnEnter(); 
@@ -43,14 +42,13 @@ public class FSM_FishChasing : FiniteStateMachine
 
          */
 
-        State APROACH = new State("APROACH",
+        State Approach = new State("APROACH",
             () => {
                 steeringContext.maxSpeed = initSpeed / 2;
-                pursue.enabled = false;
+                pursue.enabled = true;
                 pursue.target = null;
             },
             () => {
-        // Buscar pez
                 GameObject fish = SensingUtils.FindInstanceWithinRadius(
                     gameObject, "RED_BOID", blackboard.aproachRadius
                 );
@@ -65,29 +63,17 @@ public class FSM_FishChasing : FiniteStateMachine
         );
 
 
-        State CHASE = new State("Chase",
+        State Chase = new State("Chase",
             () => { steeringContext.maxSpeed = initSpeed; },
             () => { },
             () => { }
         );
 
-        State BITE = new State("Bite",
+        State Bite = new State("Bite",
             () => { elapsedTime = 0; pursue.target.GetComponent<SteeringContext>().maxSpeed = 0; },
             () => { elapsedTime = + Time.deltaTime; },
             () => { Destroy(pursue.target.gameObject); }
         );
-
-
-
-        /* STAGE 2: create the transitions with their logic(s)
-         * ---------------------------------------------------
-
-        Transition varName = new Transition("TransitionName",
-            () => { }, // write the condition checkeing code in {}
-            () => { }  // write the on trigger code in {} if any. Remove line if no on trigger action needed
-        );
-
-        */
 
         Transition goingToChase = new Transition("Going To Chase",
             () => pursue.target != null &&
@@ -110,30 +96,15 @@ public class FSM_FishChasing : FiniteStateMachine
             () => { elapsedTime = 0; }
         );
 
-        /* STAGE 3: add states and transitions to the FSM 
-         * ----------------------------------------------
-            
-        AddStates(...);
 
-        AddTransition(sourceState, transition, destinationState);
+        AddStates(Approach, Chase, Bite);
 
-         */
+        AddTransition(Approach, goingToChase, Chase);
+        AddTransition(Chase, notChased, Approach);
+        AddTransition (Chase, chased, Bite);
+        AddTransition(Bite, bited, Approach);
 
-        AddStates(APROACH, CHASE, BITE);
-
-        AddTransition(APROACH, goingToChase, CHASE);
-        AddTransition(CHASE, notChased, APROACH);
-        AddTransition (CHASE, chased, BITE);
-        AddTransition(BITE, bited, APROACH);
-
-
-        /* STAGE 4: set the initial state
-         
-        initialState = ... 
-
-         */
-
-        initialState = APROACH;
+        initialState = Approach;
 
     }
 }
