@@ -19,7 +19,6 @@ namespace Steerings
 
         public static Vector3 GetLinearAcceleration(SteeringContext me, GameObject target)
         {
-            // give priority to obstacle avoidance
             Vector3 avoidanceAcceleration = ObstacleAvoidance.GetLinearAcceleration(me);
             if (avoidanceAcceleration.Equals(Vector3.zero))
                 return Evade.GetLinearAcceleration(me, target);

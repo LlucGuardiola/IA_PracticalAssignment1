@@ -31,17 +31,6 @@ public class FSM_FishChasing : FiniteStateMachine
 
     public override void OnConstruction()
     {
-        /* STAGE 1: create the states with their logic(s)
-         *-----------------------------------------------
-         
-        State varName = new State("StateName",
-            () => { }, // write on enter logic inside {}
-            () => { }, // write in state logic inside {}
-            () => { }  // write on exit logic inisde {}  
-        );
-
-         */
-
         State APROACH = new State("APROACH",
             () => {
                 steeringContext.maxSpeed = initSpeed / 2;
@@ -62,7 +51,6 @@ public class FSM_FishChasing : FiniteStateMachine
             },
             () => { }
         );
-
 
         State Chase = new State("Chase",
             () => { steeringContext.maxSpeed = initSpeed *2; },
@@ -101,7 +89,6 @@ public class FSM_FishChasing : FiniteStateMachine
             () => { return elapsedTime > blackboard.biteDuration; },
             () => { }
         );
-
 
         AddStates(APROACH, Chase, Bite);
 

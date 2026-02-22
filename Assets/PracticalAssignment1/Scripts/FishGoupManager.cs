@@ -9,13 +9,10 @@ public class FishGroupManager : Steerings.GroupManager
     public GameObject attractor;
 
     private int created = 0;
-    private float elapsedTime = 0f;
     public Camera cam;
     public GameObject FishPrefab;
     public GameObject SharkPrefab;
 
-    // the following attributes are specifically created to help listeners of UI
-    // components get the initial values for the UI elements they're attached to
     [HideInInspector]
     public float maxSpeed, maxAcceleration, cohesionThreshold, repulsionThreshold, coneOfVisionAngle,
     cohesionWeight, repulsionWeight, alignmentWeight, seekWeight;
@@ -96,7 +93,6 @@ public class FishGroupManager : Steerings.GroupManager
 
             AddBoid(clone);
             created++;
-            elapsedTime = 0f;
         }
     }
 }

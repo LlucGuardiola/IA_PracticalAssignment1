@@ -10,7 +10,6 @@ public class FSM_SharkBehaviiour : FiniteStateMachine
 
     public override void OnEnter()
     {
-      
         blackboard = GetComponent<Shark_BLACKBOARD>();
         base.OnEnter();
     }
@@ -25,7 +24,6 @@ public class FSM_SharkBehaviiour : FiniteStateMachine
     {
         FiniteStateMachine FishChasing = ScriptableObject.CreateInstance<FSM_FishChasing>();
         FishChasing.name = "FishChasing";
-
 
         FiniteStateMachine SharkResting = ScriptableObject.CreateInstance<FSM_Resting>();
         SharkResting.name = "SharkResting";
@@ -49,8 +47,6 @@ public class FSM_SharkBehaviiour : FiniteStateMachine
             ()=> { return blackboard.totalFishesEaten <= 0;},
             () => { }
         );
-
-       
 
         AddStates(FishChasing, SharkResting, SharkHidding);
 

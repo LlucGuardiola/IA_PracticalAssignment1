@@ -19,9 +19,7 @@ public class Shark_BLACKBOARD : MonoBehaviour
     public float biteDuration = 0.1f;
     public float detectRadius = 2.0f;
 
-
     [Header("Resting FSM")]
-
     public float vomitTime = 3f;
     public float vomitTimeInterval = 1.0f;
     public float sleepTime = 4.0f;
@@ -39,11 +37,6 @@ public class Shark_BLACKBOARD : MonoBehaviour
     public float pooZoneReachedRadious = 2.0f;
 
     public int totalFishesEaten = 0;   
-
-    
-
-
-
 
     [Header("SharkBehaviour")]
     public int fishesOnScene;
@@ -68,9 +61,5 @@ public class Shark_BLACKBOARD : MonoBehaviour
         sleepIcon.SetActive(false);
         poo.SetActive(false);
         fishesOnScene = 0;
-    }
-    void Start()
-    {
-       
     }
 }
