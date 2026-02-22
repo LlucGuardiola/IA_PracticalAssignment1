@@ -40,7 +40,7 @@ public class FSM_FishChasing : FiniteStateMachine
             () => {
 
                 GameObject fish = SensingUtils.FindInstanceWithinRadius(
-                    gameObject, "RED_BOID", blackboard.aproachRadius
+                    gameObject, "FISH", blackboard.aproachRadius
                 );
 
                 if (fish != null)

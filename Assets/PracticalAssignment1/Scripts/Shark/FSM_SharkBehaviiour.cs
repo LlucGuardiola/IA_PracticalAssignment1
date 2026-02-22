@@ -33,7 +33,7 @@ public class FSM_SharkBehaviiour : FiniteStateMachine
 
         Transition toChasing = new Transition("toChasing",
             () => {
-                blackboard.currentFish = SensingUtils.FindInstanceWithinRadius(gameObject, "RED_BOID", blackboard.aproachRadius);          
+                blackboard.currentFish = SensingUtils.FindInstanceWithinRadius(gameObject, "FISH", blackboard.aproachRadius);          
                 return (blackboard.currentFish != null) && (blackboard.fishesOnScene >= blackboard.fishesToChase);
             }, 
             () => { } 

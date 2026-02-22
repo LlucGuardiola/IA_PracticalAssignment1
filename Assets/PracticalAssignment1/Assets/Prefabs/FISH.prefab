@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: -3894769920178590844}
   - component: {fileID: 1368880381347978215}
   - component: {fileID: 1368880381347978219}
-  - component: {fileID: 2706356660727299304}
-  - component: {fileID: 252556351578203363}
-  - component: {fileID: 8883282981833519034}
+  - component: {fileID: -2888302081613463891}
+  - component: {fileID: 1363833568345458154}
   m_Layer: 0
-  m_Name: FISH
+  m_Name: Fish
   m_TagString: FISH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -153,13 +152,13 @@ MonoBehaviour:
   wanderOffset: 20
   showWanderGizmos: 0
   wanderTargetOrientation: 0
-  seekWeight: 0.09
+  seekWeight: 0.08
   lookAheadLength: 20
   avoidDistance: 22
   secondaryWhiskerAngle: 30
   secondaryWhiskerRatio: 0.7
   perseveranceTime: 0.3
-  showAvoidanceGizmos: 0
+  showAvoidanceGizmos: 1
   perseveranceElapsed: 0
   persevering: 0
   avoidanceAcceleration: {x: 0, y: 0, z: 0}
@@ -181,21 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   backToInitial: 1
---- !u!114 &2706356660727299304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368880381347978208}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51021b399ad270942b4928c10c0a1e71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Steerings.Flee
-  rotationalPolicy: 1
-  target: {fileID: 0}
---- !u!114 &252556351578203363
+--- !u!114 &-2888302081613463891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,7 +195,7 @@ MonoBehaviour:
   fsm: {fileID: 11400000, guid: d9536ef1e44fb2e4badbf2bf683fa023, type: 2}
   currentState: 
   textMesh: {fileID: 0}
---- !u!114 &8883282981833519034
+--- !u!114 &1363833568345458154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
